@@ -1,0 +1,13 @@
+<h2>投稿を作成</h2>
+
+<%= form_with(model:@picture,local:true) do |form|  %>
+
+<div>
+<%= form.text_area :content %>
+</div>
+
+<div>
+<%= form.submit :投稿 %>
+</div>
+
+<% end %>
