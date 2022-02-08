@@ -1,0 +1,11 @@
+<h2>以下の内容でよろしいですか？</h2>
+
+<%= form_with(model:@picture,local:true) do |form|  %>
+  <%= form.hidden_field :content %>
+  <%= @picture.content %>
+
+  <%= form.submit "投稿" %>
+  <%= form.submit "戻る",name:"back" %>
+<% end %>
+
+<%= link_to "戻る",pictures_path %>
