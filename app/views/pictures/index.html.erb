@@ -2,6 +2,7 @@
 <% @pictures.reverse_each do |picture| %>
   <div>
     <%= picture.content %>
+    <%= image_tag picture.image.url %>
     <%= link_to "詳細",picture_path(picture.id) %>
     <%= link_to "編集",edit_picture_path(picture.id) %>
     <%= link_to "削除",picture_path(picture.id),method: :delete %>

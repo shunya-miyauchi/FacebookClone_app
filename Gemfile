@@ -17,6 +17,10 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 
+# image
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 # Backend
 gem 'jbuilder', '~> 2.7'

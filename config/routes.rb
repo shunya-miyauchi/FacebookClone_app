@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pictures#index'
+
   # users
   resources :users , only: [:new,:create,:show]
 

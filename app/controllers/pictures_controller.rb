@@ -1,6 +1,5 @@
 class PicturesController < ApplicationController
   before_action :picture_find,only: [:show,:destroy,:edit,:update]
-  skip_before_action :login_required, only: [:index,:new,:create,:show,:edit,:update,:destroy,:confirm]
 
   # 一覧表示
   def index
@@ -57,7 +56,7 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:content)
+    params.require(:picture).permit(:content,:image,:image_cache)
   end
 
   def picture_find
