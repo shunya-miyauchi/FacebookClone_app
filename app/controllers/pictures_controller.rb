@@ -20,7 +20,7 @@ class PicturesController < ApplicationController
         flash[:danger] = "投稿しました"
         redirect_to pictures_path
       else
-        flash[:danger] = "投稿できません"
+        flash.now[:danger] = "投稿できません"
         render :new
       end
     end
@@ -38,7 +38,9 @@ class PicturesController < ApplicationController
 
   # 編集
   def edit
-
+    if current_user != @picture.user  
+      redirect_to pictures_path
+    end
   end
 
   def update
@@ -52,8 +54,13 @@ class PicturesController < ApplicationController
 
   # 削除
   def destroy
-    @picture.destroy
-    redirect_to pictures_path
+    if current_user != @picture.user  
+      redirect_to pictures_path
+    else
+      @picture.destroy
+      flash[:danger] = "削除しました"
+      redirect_to pictures_path
+    end
   end
 
   private

@@ -3,8 +3,10 @@
     <div class="picture_user">
       <%= picture.user.name %>
       <%= link_to "詳細",picture_path(picture.id),class:'picture_detail btn btn-outline-secondary btn-sm' %>
-      <%= link_to "編集",edit_picture_path(picture.id),class:"picture_edit btn btn-outline-secondary btn-sm" %>
-      <%= link_to "削除",picture_path(picture.id),method: :delete,class:"picture_delete btn btn-outline-secondary btn-sm" %>
+      <% if current_user == picture.user %>
+        <%= link_to "編集",edit_picture_path(picture.id),class:"picture_edit btn btn-outline-secondary btn-sm" %>
+        <%= link_to "削除",picture_path(picture.id),method: :delete,class:"picture_delete btn btn-outline-secondary btn-sm" %>
+      <% end %>
     </div>
     <div class="picture_content">
       <%= picture.content %>
@@ -12,8 +14,6 @@
     <div class="picture_image">
       <%= image_tag picture.image.url %>
     </div>
-    <div>
-      
-    </div>
   </div>
 <% end %>
+
