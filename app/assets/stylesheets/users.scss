@@ -1,3 +1,16 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.user_new_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#user_name,#user_email,#user_password,#user_password_confirmation {
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+}
+
+.user_new_btn {
+  text-align: center;
+  padding: 20px 0px;
+}

@@ -12,11 +12,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = current_user.pictures.build(picture_params)
+    @picture = current_user.pictures.build(picture_params)  
     if params[:back]
       render :new
     else
       if @picture.save
+        flash[:danger] = "投稿しました"
         redirect_to pictures_path
       else
         flash[:danger] = "投稿できません"
@@ -28,6 +29,7 @@ class PicturesController < ApplicationController
   # 確認
   def confirm
     @picture = current_user.pictures.build(picture_params)
+    render :new if @picture.invalid?
   end
 
   # 参照
@@ -41,6 +43,7 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(picture_params)
+      flash[:danger] = "編集しました"
       redirect_to pictures_path
     else
       render :edit

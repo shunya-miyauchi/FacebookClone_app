@@ -1,0 +1,25 @@
+<header class="header">
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"><%= link_to "FacebookClone",pictures_path %></span>
+  <ul class="nav justify-content-end">  
+    <% if logged_in? %>
+      <li class="nav-item">
+        <%= link_to "新規投稿", new_picture_path,class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "プロフィール", user_path(current_user.id),class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete,class:"nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "新規登録", new_user_path,class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "ログイン", new_session_path,class:"nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+</header>

@@ -1,3 +1,79 @@
-// Place all the styles related to the Pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// index
+.picture {
+  margin: 20px 0px;
+  border: thin solid rgba(0, 0, 0, 0.151);
+  border-radius: 30px;
+  background-color: white;
+  width: 600px;
+}
+
+.picture_user {
+  margin: 0px auto;
+  height: auto;
+  width: 500px;
+  padding: 20px 0px 10px 0px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.picture_content {
+  margin: 0px auto;
+  height: auto;
+  width: 500px;
+  font-size: large;
+}
+
+.picture_image {
+  width: auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.picture_detail {
+  margin: auto 0px auto auto;
+}
+
+.picture_edit {
+  margin-left: 10px;
+}
+
+.picture_delete {
+  margin-left: 10px;
+}
+
+// new/edit
+.new_edit_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new_edit_content {
+  width: 500px;
+  height: 300px;
+}
+
+.new_edit_image {
+  margin: 20px 0px;
+  text-align: center;
+}
+
+.image_label {
+  border-bottom: thin solid rgba(0, 0, 0, 0.5);
+}
+
+// confirm
+.confirm_btn {
+  text-align: center;
+  padding-top: 20px;
+}
+
+// show
+.show_content {
+  width: 500px;
+  padding: 15px 0px;
+}
+
+.show_image {
+  padding-bottom: 15px;
+}

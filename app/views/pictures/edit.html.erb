@@ -1,5 +1,20 @@
-<%= form_with(model:@picture,local:true) do |form| %>
-  <%= form.text_area :content %>
+<p class="title">編集</p>
+<%= form_with(model:@picture,local:true,class:"new_edit_form") do |form|  %>
 
-  <%= form.submit "編集" %>
+  <div>
+    <%= form.text_area :content,class:"new_edit_content" %>
+  </div>
+
+  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    
+  <div class="new_edit_image">
+      <%= form.label :image,"画像を変更",class:"image_label"%><br>
+      <%= form.file_field :image,class:"image_form" %>
+      <%= form.hidden_field :image_cache %>
+  </div>
+
+  <div>
+    <%= form.submit :編集,class:"btn btn-secondary btn-sm" %>
+    <%= link_to "戻る",pictures_path,class:"btn btn-secondary btn-sm" %>
+  </div>
 <% end %>

@@ -1,14 +1,18 @@
-<h2>以下の内容でよろしいですか？</h2>
-
+<p class="title">以下の内容でよろしいですか？</p>
 <%= form_with(model:@picture,local:true) do |form|  %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
 
+  <div>
   <%= @picture.content %>
+  </div>
+  
+  <div>
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-
-  <%= form.submit "投稿" %>
-  <%= form.submit "戻る",name:"back" %>
+  </div>
+  
+  <div class="confirm_btn">
+  <%= form.submit "投稿",class:"btn btn-secondary btn-sm" %>
+  <%= form.submit "戻る",name:"back",class:"btn btn-secondary btn-sm" %>
+  </div>
 <% end %>
-
-<%= link_to "戻る",pictures_path %>

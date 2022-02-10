@@ -1,20 +1,21 @@
-<h2>投稿を作成</h2>
+<p class="title">投稿を作成</p>
+<%= render 'layouts/error',name: @picture %>
+<%= form_with(model:@picture,local:true,url:confirm_pictures_path,class:"new_edit_form") do |form|  %>
 
-<%= form_with(model:@picture,local:true,url:confirm_pictures_path) do |form|  %>
+  <div>
+    <%= form.text_area :content,class:"new_edit_content" %>
+  </div>
 
-<div>
-<%= form.text_area :content %>
-</div>
+  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    
+  <div class="new_edit_image">
+      <%= form.label :image,"画像を追加",class:"image_label"%><br>
+      <%= form.file_field :image,class:"image_form" %>
+      <%= form.hidden_field :image_cache %>
+  </div>
 
-<div>
-<%= form.file_field :image %>
-<%= form.hidden_field :image_cache %>
-</div>
-
-<div>
-<%= form.submit :投稿 %>
-</div>
-
-<%= link_to "戻る",pictures_path %>
-
+  <div>
+    <%= form.submit :確認,class:"btn btn-secondary btn-sm" %>
+    <%= link_to "戻る",pictures_path,class:"btn btn-secondary btn-sm" %>
+  </div>
 <% end %>

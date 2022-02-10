@@ -1,20 +1,16 @@
-<h1>ログイン</h1>
+<div class="main">
+  <p class="title">ログイン</p>
+  <%= render partial: 'layouts/flash' %>
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |form| %>
 
-<%= render partial: 'layouts/flash' %>
+    <div class="login_form">
+      <%= form.email_field :email,placeholder:"メールアドレス" %>
+      <%= form.password_field :password,placeholder:"パスワード" %>
+    </div>
 
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div class="login">
+    <%= form.submit "ログイン",class:"login_btn btn btn-primary" %>
+    </div>
+  <% end %>
 
-  <div>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  </div>
-
-  <div>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  </div>
-
-  <div>
-  <%= f.submit "ログイン" %>
-  </div>
-<% end %>
+</div>

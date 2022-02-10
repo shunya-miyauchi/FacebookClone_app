@@ -1,2 +1,12 @@
-<%= @picture.content %>
-<%= image_tag @picture.image.url %>
+<p class="title">投稿詳細</p>
+<div>
+  <%= @picture.user.name %>
+</div>
+<%= l @picture.created_at %>
+<div class="show_content">
+  <%= @picture.content %>
+</div>
+<div class="show_image">
+  <%= image_tag @picture.image.url %>
+</div>
+<%= link_to "戻る",pictures_path,class:"btn btn-secondary btn-sm" %>

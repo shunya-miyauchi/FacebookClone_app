@@ -1,0 +1,19 @@
+// header
+.bg-light {
+  background-color: white !important;
+  border-bottom: thin solid rgba(0, 0, 0, 0.171);
+}
+
+.nav-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.badge-secondary {
+  padding-left: 10px;
+}
+
+// error
+.alert-danger {
+  text-align: center;
+}
