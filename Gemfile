@@ -29,9 +29,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # add
 gem 'psych', '~> 3.1'
 gem 'bcrypt'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do

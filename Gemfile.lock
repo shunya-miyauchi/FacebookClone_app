@@ -84,6 +84,11 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -93,6 +98,7 @@ GEM
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
+    io-wait (0.2.1)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -111,8 +117,25 @@ GEM
     mini_mime (1.1.2)
     minitest (5.15.0)
     msgpack (1.4.4)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
+    net-protocol (0.1.2)
+      io-wait
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.1-x86_64-linux)
       racc (~> 1.4)
     pg (1.3.1)
     psych (3.3.2)
@@ -187,9 +210,11 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
+    strscan (3.0.1)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    timeout (0.2.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -218,6 +243,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt
@@ -225,9 +251,13 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave
+  dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mini_magick
+  net-imap
+  net-pop
+  net-smtp
   pg (>= 0.18, < 2.0)
   psych (~> 3.1)
   puma (~> 4.1)
